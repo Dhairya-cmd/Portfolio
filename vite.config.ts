@@ -6,9 +6,9 @@ import { defineConfig } from 'vite'
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
-// GitHub Pages: set VITE_BASE to '/<repo-name>/' when deploying to a project site.
-// User/org sites (username.github.io) can leave the default '/'.
-const base = process.env.VITE_BASE || '/'
+// Relative base works on GitHub Pages project sites (e.g. /Portfolio/)
+// without hardcoding the repo name. Override with VITE_BASE if needed.
+const base = process.env.VITE_BASE || './'
 
 export default defineConfig({
   base,

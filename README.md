@@ -20,30 +20,21 @@ npm run preview  # preview the production build on port 4321
 
 ## Deploy to GitHub Pages
 
-This project is configured for static hosting.
+### Easiest (GitHub Desktop, stay on `main`)
 
-### Option A — GitHub Actions (recommended)
+This repo includes a prebuilt site in the `docs/` folder.
 
-1. Push this repo to GitHub.
-2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. The workflow in `.github/workflows/deploy-pages.yml` builds with `VITE_BASE=/<repo-name>/` and deploys `dist/` on every push to `main`.
+1. Push everything to `main`
+2. GitHub → **Settings → Pages**
+3. Source: **Deploy from a branch**
+4. Branch: **`main`** · Folder: **`/docs`**
+5. Save
+6. Open: `https://YOUR_USERNAME.github.io/YOUR_REPO/`
 
-### Option B — Manual / `gh-pages` branch
+### Option B — GitHub Actions
 
-```bash
-# Replace YOUR_REPO with the GitHub repository name
-VITE_BASE=/YOUR_REPO/ npm run build
-# Then upload the contents of dist/ to the gh-pages branch
-# or use: npx gh-pages -d dist
-```
-
-### User / organization site (`username.github.io`)
-
-If the repo is named `username.github.io`, build with root base:
-
-```bash
-VITE_BASE=/ npm run build
-```
+1. Pages → Source: **GitHub Actions**
+2. Push to `main` (workflow builds and deploys `dist/`)
 
 ## Site sections
 
